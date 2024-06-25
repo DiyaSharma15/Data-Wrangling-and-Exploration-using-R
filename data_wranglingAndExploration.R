@@ -11,11 +11,8 @@ sal<- read.csv("salaries.csv")
 
 #display the first 5 records of the dataset
 head(sal)
-
 #last 10
 tail(sal, 10)
-
-
 
 
 #CLEAN DATA 
@@ -48,11 +45,8 @@ duplicates
 duplicates <- sal[duplicates_logical, ]
 duplicates
 
-
 # Ommit duplicates and save in another data frame 
 sal_cleaned <- sal[!duplicated(sal), ]
-
-
 
 
 
@@ -101,10 +95,9 @@ plot_salary_year <- plot_ly(
 plot_salary_year
 
 
-sal2 <- read.csv("Salary.csv")
-
-
 # Box Plot 
+
+sal2 <- read.csv("Salary.csv")
 
 plot_salary_EXyear <- plot_ly(
   data = sal2, 
@@ -122,6 +115,9 @@ plot_salary_EXyear <- plot_ly(
   )
 
 plot_salary_EXyear
+
+
+
 
 # Box plot
 
@@ -156,10 +152,7 @@ states <- read.csv("states.csv")
 wage_df <- read.csv("Minimum Wage Data.csv") %>%
   inner_join(states, by = c("State" = "State")) %>% # Joining tables using the state column
     select (Year, State, Code, Wage)%>% # select which columns to have in dataset
-    mutate(hover = paste0(State, "\n$", Wage)) # creates a new column
-
-
-
+    mutate(hover = paste0(State, "\n$", Wage)) # create a new column
 
 #Setting the font style
 fontstyle = list(
@@ -175,11 +168,9 @@ label = list(
   font = fontstyle
 )
 
-
-
   
 # visualize the Data 
-# types of Maps: scatter, bubble, choropleth, density(heatmap), lines
+
 wage_map <- wage_df %>% plot_ly(
   locationmode = 'USA-states', # setting the location to the USA
   frame = ~Year, #setting the slider for which column
@@ -207,7 +198,6 @@ wage_map <- wage_df %>% plot_ly(
   #display the $ in the legend
   colorbar(tickprefix = '$')
 
-  
 
 wage_map
 
