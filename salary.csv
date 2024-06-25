@@ -1,0 +1,6 @@
+﻿EmployeeID,Department,Position,yearsExperience,Education,Salary
+1001,sales,manager,8,Bachelor,80000
+1002,Marketing,Analyst,3,Master,60000
+1003,Finance,Accountant,5,Bachelor,70000
+1004,Sales,Sales Rep,2,High School,45000
+1005,HR,HR Manager,10,Master,90000
